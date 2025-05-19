@@ -34,6 +34,12 @@ export default function ConnectingDotsBackground() {
 
     function draw() {
       ctx.clearRect(0, 0, width, height);
+      
+      // Background
+      ctx.fillStyle = '#121212'; // dark grey background 
+      ctx.fillRect(0, 0, width, height)
+      ctx.save();
+      ctx.shadowBlur = 4;
 
       const dotRadius = height; // Dots visible within full screen height
       const lineRadius = height / 2; // Lines visible within half screen height
@@ -127,8 +133,9 @@ export default function ConnectingDotsBackground() {
     };
 
     const handleMouseMove = (e: MouseEvent) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
     };
 
     window.addEventListener('resize', handleResize);
@@ -144,7 +151,7 @@ export default function ConnectingDotsBackground() {
     <canvas
       ref={canvasRef}
       style={{
-        position: 'fixed',
+        position: 'absolute',
         top: 0,
         left: 0,
         width: '100vw',

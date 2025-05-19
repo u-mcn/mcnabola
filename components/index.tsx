@@ -3,3 +3,9 @@ export {default as Button} from "./buttons";
 export {default as Section} from "./sections";
 export {default as Home} from "./home";
 export {default as Navbar} from "./navbar";
+export {default as ParticlesBackground} from "./particles"
+export {default as ContactSection} from "./contact"
+export {default as AboutSection} from "./about"
+export {default as Footer} from "./footer"
+export {default as SkillCard} from "./skillcard"
+export {default as SkillGrid} from "./skillgrid"

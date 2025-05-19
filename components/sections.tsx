@@ -1,14 +1,20 @@
 'use client';
 
+import { ParticlesBackground } from "@/components";
+
 interface SectionProps {
   id: string;
   children: React.ReactNode;
 }
 
-export default function Section({ id, children }: SectionProps) {
+export default function Section({ id, children}: SectionProps) {
   return (
-    <section id={id} className="min-h-screen flex items-center justify-center bg-blue-950 bg-opacity-80 text-white text-3xl font-semibold">
-      {children}
+    <section id={id} className="relative min-h-screen flex items-center justify-center text-white text-3xl font-semibold overflow-hidden">
+      <ParticlesBackground/>
+      <div className="relative z-10">
+        {children}
+      </div>
+
     </section>
   );
 }
