@@ -35,7 +35,7 @@ export default function PersonPage() {
             { name: "Jest", iconSrc: "/img/jest.png" },
             { name: "Git", iconSrc: "/img/git.png" },
             { name: "Python", iconSrc: "/img/py.png" },
-            { name: "SQL", iconSrc: "/img/sql.png" },
+            { name: "SQL", iconSrc: "/img/SQL_icon.png" },
             { name: "Psychology", iconSrc: "/img/psi.png" },
           ]}
         />
