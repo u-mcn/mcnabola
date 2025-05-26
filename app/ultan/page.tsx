@@ -7,8 +7,8 @@ const projects = [
     title: 'Speakfake',
     description: 'Deepfake app built using Python, TKinter, Whisper',
     imageSrc: '/img/speakfakeV2.png',
-    viewLink: 'https://www.youtube.com/',
-    githubLink: 'https://www.google.com/',
+    viewLink: 'https://media.heanet.ie/page/1d9177f91aa648058d5b8c00cc38c7ac',
+    githubLink: 'https://github.com/u-mcn',
   },  
   // {
   //   title: 'Test',
