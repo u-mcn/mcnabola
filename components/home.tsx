@@ -18,7 +18,12 @@ export default function Home({ name, title, buttonText, buttonLink, themeColor }
       </h1>
       <h2 className="text-2xl font-light mb-8">{title}</h2>
 
-      <Button text={buttonText} href={buttonLink} themeColor={themeColor} />
+      <Button 
+      text={buttonText} 
+      href={buttonLink} 
+      themeColor={themeColor}
+      variant="home"
+      />
     </section>
   );
 }

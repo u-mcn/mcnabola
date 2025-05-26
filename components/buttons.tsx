@@ -1,37 +1,54 @@
 'use client';
 
 import Link from 'next/link';
+import clsx from 'clsx';
+import './button.css';
 
 interface ButtonProps {
   text: string;
   href: string;
-  themeColor: string;
+  themeColor?: string;
+  variant?: 'home' | 'select' | 'action';
 }
 
-export default function Button({ text, href, themeColor }: ButtonProps) {
+export default function Button({
+  text,
+  href,
+  themeColor = '#ff4d5a',
+  variant = 'home',
+}: ButtonProps) {
+  const baseStyles =
+    'inline-flex items-center justify-center border-2 font-medium cursor-pointer transition duration-200';
+
+  const stylesByVariant = {
+    home: clsx(
+      baseStyles,
+      'w-[275px] h-[48px] text-[24px] rounded-sm hover:opacity-80',
+      'bg-[rgba(26,26,26,0.6)]'
+    ),
+    select: clsx(
+      baseStyles,
+      'w-[300px] h-[60px] text-xl rounded-md hover:scale-105'
+    ),
+    action: 'btn btn-background-slide text-sm px-4 py-2'
+  };
+
   return (
     <Link href={href}>
       <div
-      style={{
-        color: themeColor,
-        borderColor: themeColor,
-        backgroundColor: 'rgba(26, 26, 26, 0.6)',
-        fontFamily: 'Montserrat, sans-serif',
-      }}
-      className="w-[275px] h-[48px] mt-10 border-2 rounded-sm text-[24px] font-medium flex items-center justify-center gap-2 cursor-pointer transition hover:opacity-80"
-    >
-      {text}
-      {/* <svg
-        className="w-6 h-6"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
+        className={stylesByVariant[variant]}
+        style={{
+          color: 'white',
+          borderColor: themeColor,
+          fontFamily: 'Montserrat, sans-serif',
+          ...(variant === 'action' && { borderBottom: `2px solid ${themeColor}` }),
+          ...(variant === 'action' && { '--accent-color': themeColor } as React.CSSProperties),
+        }}
       >
-        <path d="M11.293 5.707l5.293 5.293h-11.586c-0.552 0-1 0.448-1 1s0.448 1 1 1h11.586l-5.293 5.293c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0l7-7c0.092-0.092 0.166-0.202 0.217-0.324 0.101-0.245 0.101-0.521 0-0.766-0.049-0.118-0.121-0.228-0.217-0.324l-7-7c-0.391-0.391-1.024-0.391-1.414 0s-0.391 1.024 0 1.414z" />
-      </svg> */}
-    </div>
-  </Link>
-);
+        {text}
+      </div>
+    </Link>
+  );
 }
       {/* style={{
         borderColor: themeColor,

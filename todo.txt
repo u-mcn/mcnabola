@@ -1,0 +1,33 @@
+- Split Buttons
+	- Button 1 - Button for Selecting Portfolio 
+		-TODO
+	- Button 2 - Button for Home Section in Portfolio (View My Work) 
+		- Add border pop
+	- Button 3 - Button for general Selecting things like in project and Contact 
+		- Edit size
+		- Add change to black on highlight
+		- Add to send
+
+- Projects Section
+	- Fix Border - Done 
+	- Fix Formatting Issue 
+		- ie, text going to RHS
+	- add it so images pop out
+
+- Add Footer
+
+- Navbar
+	- Highlight Navbar Section when on it
+	- Add something top left to get back to first page
+	- decrease size of navbar
+
+- Contact
+	- Add modular ability to Contact (EmailJS) - if requested
+
+- About
+	- Fix Skills for phone
+	- Fix text not going far enough
+
+- Test
+	- Test extensively on Phone
+	- Write tests for Website - Jest
