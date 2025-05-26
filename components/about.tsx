@@ -2,6 +2,7 @@
 
 import { ParticlesBackground } from "@/components";
 import { SkillGrid } from "@/components";
+import React from "react";
 
 interface Skill {
   name: string;
@@ -43,10 +44,13 @@ export default function AboutSection({ bio, imageSrc, skills }: AboutSectionProp
           </div>
 
           {/* Right: Bio */}
-          <div className="max-w-xl ">
-            <p className="text-lg leading-relaxed text-gray-300 text-center">
-              {bio}
-            </p>
+          <div className="max-w-2xl text-lg leading-relaxed text-gray-300 mb-6">
+            {bio.split(/\r?\n/).map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </div>

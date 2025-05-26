@@ -1,6 +1,26 @@
 'use client';
 
-import { ConnectingDotsBackground, Section, Navbar, Home, ContactSection, AboutSection } from "@/components";
+import { ConnectingDotsBackground, Navbar, Home, AboutSection, ContactSection, ProjectSection } from "@/components";
+
+const projects = [
+  {
+    title: 'Speakfake',
+    description: 'Deepfake app built using Python, TKinter, Whisper',
+    imageSrc: '/img/speakfakeV2.png',
+    viewLink: 'https://www.youtube.com/',
+    githubLink: 'https://www.google.com/',
+  },  
+  // {
+  //   title: 'Test',
+  //   description: 'This is a Test to test things, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST, TEST',
+  //   imageSrc: '/img/speakfakeV1.png',
+  //   viewLink: 'https://www.youtube.com/',
+  //   githubLink: 'https://www.google.com/',
+  // },
+]
+const bio_u = `Hi! I am a Psychology and Computer Science student in University College Cork, My passion lies at the connection between technology and human behavior — I'm just as fascinated by how software works as I am by how people interact with it. I am eager and quick to learn different new computer technologies and languages. Recently I have been interested in different types of AI and their applications as first outlined by Issac Asimov, I have been doing this through my own personal projects or through university such as my Final Year Project which looked at developing and using Deepfake technology to investigate the relationship between accent and credibility. 
+          
+Outside of of coding, I'm a member of Netsoc at UCC, play rugby and enjoy reading, learning about history and staying connected to the Irish language. Whether it's building software or exploring new ideas, I'm always curious, creative and eager to learn.`
 
 export default function PersonPage() {
   return (
@@ -24,7 +44,7 @@ export default function PersonPage() {
       <main className="w-full">
         {/* <Section id="about">About Me Section</Section> */}
         <AboutSection
-          bio="This is a paragraph about me, paragraph test test test test mcparagraphface alythough i still wan to test lines, paragraph mcparagraphface, paragraph mcparagraphface, paragraph mcparagraphface, paragraph mcparagraphface, paragraph mcparagraphface"
+          bio={bio_u}
           imageSrc="/img/Shrek.png"
           skills={[
             { name: "HTML", iconSrc: "/img/html.png" },
@@ -39,7 +59,8 @@ export default function PersonPage() {
             { name: "Psychology", iconSrc: "/img/psi.png" },
           ]}
         />
-        <Section id="projects">Projects Section</Section>
+        <ProjectSection projects={projects} />
+        {/* <Section id="projects">Projects Section</Section> */}
         {/* <Section id="contact">Contact Section</Section> */}
         <ContactSection/>
       </main>
