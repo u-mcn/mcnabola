@@ -14,6 +14,12 @@ pnpm dev
 bun dev
 ```
 
+If you've just done a recent git pull you might want to do a fresh install.
+
+```bash
+npm install
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
